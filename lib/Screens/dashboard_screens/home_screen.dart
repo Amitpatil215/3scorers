@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
@@ -83,10 +82,12 @@ class TabWidget extends StatelessWidget {
           child: Center(
             child: Text(
               title,
-              style: TextStyle(
-                color:
-                    isSelected ? Colors.black : Colors.white.withOpacity(0.5),
-              ),
+              style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                    color: isSelected
+                        ? Colors.black
+                        : Colors.white.withOpacity(0.5),
+                    fontWeight: FontWeight.w500,
+                  ),
             ),
           ),
         ),
