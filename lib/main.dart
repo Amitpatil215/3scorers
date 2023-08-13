@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:scorers/Screens/dashboard_screens/base_screen.dart';
+import 'package:scorers/Screens/base_screen/base_screen.dart';
 import 'package:scorers/Utils/theme/bright_theme.dart';
 
 void main() async {

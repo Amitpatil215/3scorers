@@ -1,8 +1,8 @@
 // ignore_for_file: library_private_types_in_public_api
 
-import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:scorers/Screens/base_screen/base_screen_widget.dart/drawer_base_screen_widget.dart';
 import 'package:scorers/Screens/dashboard_screens/highlights_screen.dart';
 import 'package:scorers/Screens/dashboard_screens/home_screen.dart';
 import 'package:scorers/Screens/dashboard_screens/leaderborad_screen.dart';
@@ -118,107 +118,6 @@ class _BaseScreenState extends State<BaseScreen> {
           fit: BoxFit.cover,
           scale: scale,
         ),
-      ),
-    );
-  }
-}
-
-class BaseScreenDrawerWidget extends StatelessWidget {
-  const BaseScreenDrawerWidget({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    var neumorphicStyle = NeumorphicStyle(
-      shape: NeumorphicShape.convex,
-      depth: -10,
-      border: NeumorphicBorder(
-        color: Colors.grey[300]!,
-        width: 0.3,
-      ),
-      boxShape: NeumorphicBoxShape.roundRect(
-        BorderRadius.circular(12),
-      ),
-    );
-    return Drawer(
-      backgroundColor: AppColors.primaryColor,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          DrawerHeader(
-            margin: EdgeInsets.zero,
-            child: Image.asset(
-              "assets/images/logo.png",
-              scale: 0.8,
-            ),
-          ),
-          Expanded(
-            child: Padding(
-              padding: EdgeInsets.all(10.w),
-              child: Neumorphic(
-                style: neumorphicStyle,
-                child: Container(
-                  color: AppColors.primaryColor,
-                ),
-              ),
-            ),
-          ),
-          SizedBox(height: 10.h),
-          const NeumorphicButtonWidget(
-            icon: Icons.login,
-            label: "Login",
-          ),
-          const NeumorphicButtonWidget(
-            icon: Icons.person,
-            label: "Sign Up",
-          ),
-          const NeumorphicButtonWidget(
-            icon: Icons.logout,
-            label: "Logout",
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class NeumorphicButtonWidget extends StatelessWidget {
-  const NeumorphicButtonWidget({
-    super.key,
-    required this.label,
-    required this.icon,
-  });
-  final String label;
-  final IconData icon;
-
-  @override
-  Widget build(BuildContext context) {
-    var neumorphicStyle = NeumorphicStyle(
-      shape: NeumorphicShape.convex,
-      color: AppColors.primaryColor,
-      depth: -10,
-      border: NeumorphicBorder(
-        color: Colors.grey[300]!,
-        width: 0.3,
-      ),
-      boxShape: NeumorphicBoxShape.roundRect(
-        BorderRadius.circular(12),
-      ),
-    );
-    return NeumorphicButton(
-      margin: const EdgeInsets.all(8.0),
-      onPressed: () {
-        print('Login button pressed');
-      },
-      style: neumorphicStyle,
-      padding: const EdgeInsets.all(12.0),
-      child: Row(
-        children: <Widget>[
-          Icon(icon, size: 24, color: Colors.white),
-          const SizedBox(width: 8),
-          Text(label, style: const TextStyle(color: Colors.white)),
-        ],
       ),
     );
   }
